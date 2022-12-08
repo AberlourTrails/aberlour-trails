@@ -9,6 +9,11 @@
     box-sizing: border-box;
 }
 
+a
+{
+    color: inherit;
+}
+
 html
 {
     background-color: #000000;
@@ -80,26 +85,19 @@ div.hero-container
         0.1rem 0.1rem 0.5rem #000000,
         0.1rem 0.1rem 0.5rem #000000;
 
+    /* Top padding sufficient to exceed the top nav bar. */
+    padding: 3rem 2rem 0;
+}
+
+div.hero-container-location
+{
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
     align-items: center;
     gap: 2rem;
 
-    /* Top padding sufficient to exceed the top nav bar. */
-    padding: 3rem 2rem 0;
-
     height: 100vh;
-}
-
-div.hero-container header
-{
-    padding: 2rem 0;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
 }
 
 div.hero-container header h2,
@@ -110,10 +108,20 @@ div.hero-container header h3
     margin: 0;
 }
 
-div.hero-container header h2 { font-size: 2em; letter-spacing: -0.05rem; }
-div.hero-container header h3 { font-size: 4em; letter-spacing: -0.10rem; }
+div.hero-container-location header
+{
+    padding: 2rem 0;
 
-div.hero-container header div#media-controls
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+div.hero-container-location header h2 { font-size: 2em; letter-spacing: -0.05rem; }
+div.hero-container-location header h3 { font-size: 4em; letter-spacing: -0.10rem; }
+
+div.hero-container-location header div#media-controls
 {
     margin-top: auto;
     padding-top: 2rem;
@@ -125,13 +133,13 @@ div.hero-container header div#media-controls
     gap: 2rem;
 }
 
-div.hero-container header div#media-controls div.control-strip
+div.hero-container-location header div#media-controls div.control-strip
 {
     display: flex;
     flex-direction: row;
 }
 
-div.hero-container header div#media-controls div.control-strip > *
+div.hero-container-location header div#media-controls div.control-strip > *
 {
     border: 0;
     background-color: #00000080;
@@ -139,51 +147,83 @@ div.hero-container header div#media-controls div.control-strip > *
     font-size: 2rem;
 }
 
-div.hero-container header div#media-controls div.control-strip > *:first-child
+div.hero-container-location header div#media-controls div.control-strip > *:first-child
 {
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem;
 }
 
-div.hero-container header div#media-controls div.control-strip > *:last-child
+div.hero-container-location header div#media-controls div.control-strip > *:last-child
 {
     border-bottom-right-radius: 1rem;
     border-top-right-radius: 1rem;
 }
 
-div.hero-container header div#media-controls div.control-strip select
+div.hero-container-location header div#media-controls div.control-strip select
 {
     padding: 0.5rem;
 }
 
-div.hero-container header div#media-controls div.control-strip button
+div.hero-container-location header div#media-controls div.control-strip button
 {
     border-left: 1px solid #00000040;
     padding: 0.5rem 1rem;
 }
 
-div.hero-container header div#media-controls div.control-strip button:active
+div.hero-container-location header div#media-controls div.control-strip button:active
 {
     background-color: #00000060;
 }
 
-div.hero-container main
+div.hero-container-location main
 {
     background-color: #000000c0;
     border-radius: 1rem;
-    padding: 1rem 0;
 }
 
-div.hero-container main article
+div.hero-container-location main article
 {
     overflow-y: scroll;
-    padding: 1rem 2rem;
     max-height: 75vh;
 }
 
-div.hero-container main article > *:last-child
+div.hero-container-trail
+{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    align-items: center;
+    gap: 2rem;
+
+    height: 22.5rem;
+}
+
+div.hero-container-trail header
+{
+    text-align: center;
+}
+
+div.hero-container-trail header h2 { font-size: 4em; letter-spacing: -0.10rem; }
+
+main
+{
+    padding: 1rem 0;
+}
+
+main article
+{
+    padding: 1rem 2rem;
+}
+
+main article > *:last-child
 {
     margin-bottom: 0;
+}
+
+body.trail main
+{
+    margin: auto;
+    max-width: 40rem;
 }
 
 nav#trail,
@@ -280,17 +320,21 @@ p
 
     div.hero-container
     {
+        /* Top padding still sufficient to exceed the top nav bar, which is
+        shorter now. */
+        padding: 2rem 0 0;
+    }
+
+    div.hero-container-location
+    {
         background-position: center 0;
         background-size: auto 75vh;
         background-repeat: no-repeat;
         display: block;
-        /* Top padding still sufficient to exceed the top nav bar, which is
-        shorter now. */
-        padding: 2rem 0 0;
         height: auto;
     }
 
-    div.hero-container header
+    div.hero-container-location header
     {
         align-items: center;
         justify-content: center;
@@ -301,18 +345,18 @@ p
         height: calc(75vh - 2rem);
     }
 
-    div.hero-container header div#media-controls
+    div.hero-container-location header div#media-controls
     {
         flex-direction: row;
     }
 
-    div.hero-container main
+    div.hero-container-location main
     {
         border-radius: 0;
         padding: 0;
     }
 
-    div.hero-container main article
+    div.hero-container-location main article
     {
         background-color: #000000;
         padding: 1rem 1rem;
@@ -338,7 +382,7 @@ p
 }
 
 @media screen and (max-width: 960px) and (min-aspect-ratio: 1) {
-    div.hero-container
+    div.hero-container-location
     {
         background-position: 0 0;
         background-size: 100vw auto;
