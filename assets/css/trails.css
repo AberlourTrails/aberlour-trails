@@ -2,3 +2,21 @@ div.hero-container-trail#hero-container-trail-heritage
 {
     background-image: url("../../trails/heritage/assets/img/hero-1920.jpg");
 }
+
+div#map
+{
+    height: 75vh;
+}
+
+div#map div.map-icon
+{
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 0.2rem solid #0000c0;
+    color: #000000;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    width: 1.5rem;
+    height: 1.5rem;
+}
