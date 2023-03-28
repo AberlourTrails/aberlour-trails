@@ -1,8 +1,13 @@
 const HAVE_CURRENT_DATA = 2;
 
-const enableControls = () => {
+const enableAudioControls = (language) => {
+    document.querySelectorAll('audio').forEach(audioEl => {
+        audioEl.pause();
+        audioEl.currentTime = 0;
+    });
+
     const playButtonEl = document.querySelector('#play-button');
-    const audioEl = document.querySelector('audio');
+    const audioEl = document.querySelector(`audio[lang=${language}]`);
 
     const updatePlayButton = () => {
         if (audioEl.paused) {
@@ -29,15 +34,13 @@ const enableControls = () => {
     audioEl.addEventListener('pause', handleAudioEvent);
     audioEl.addEventListener('play', handleAudioEvent);
 
-    playButtonEl.addEventListener('click', (_e) => {
+    playButtonEl.onclick = (_e) => {
         if (audioEl.paused) {
             audioEl.play();
         } else {
             audioEl.pause();
         }
-    });
+    };
 
     document.querySelector('#media-controls').style.display = 'flex';
 };
-
-enableControls();

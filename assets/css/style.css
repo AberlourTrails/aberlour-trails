@@ -183,6 +183,7 @@ div.hero-container-location main
 
 div.hero-container-location main article
 {
+    display: none;
     overflow-y: scroll;
     max-height: 75vh;
 }
