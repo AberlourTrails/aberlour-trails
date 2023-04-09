@@ -116,6 +116,7 @@ div.hero-container-location header
     flex-direction: column;
     justify-content: center;
     align-items: end;
+    text-align: right;
 }
 
 div.hero-container-location header h2 { font-size: 2em; letter-spacing: -0.05rem; }
@@ -339,6 +340,7 @@ p
     {
         align-items: center;
         justify-content: center;
+        text-align: center;
         /* Height is no longer enforced by the parent element, so this needs to
         pick up the slack. We want the bottom of the element to line up with
         the bottom of the parent element's background image, so we need to
