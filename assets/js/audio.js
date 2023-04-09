@@ -9,6 +9,10 @@ const enableAudioControls = (language) => {
     const playButtonEl = document.querySelector('#play-button');
     const audioEl = document.querySelector(`audio[lang=${language}]`);
 
+    if (playButtonEl === null || audioEl === null) {
+        return;
+    }
+
     const updatePlayButton = () => {
         if (audioEl.paused) {
             playButtonEl.innerHTML = '▶';
@@ -41,6 +45,4 @@ const enableAudioControls = (language) => {
             audioEl.pause();
         }
     };
-
-    document.querySelector('#media-controls').style.display = 'flex';
 };
