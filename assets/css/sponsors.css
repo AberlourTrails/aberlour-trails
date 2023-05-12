@@ -13,13 +13,14 @@ footer ul#sponsors li
     /* Each sponsor is visible for 50s / 5 = 10s. */
     animation-duration: 50s;
     animation-iteration-count: infinite;
-    margin-left: -20rem;
+    text-align: center;
     opacity: 0;
     padding-bottom: 2rem;
     visibility: hidden;
     position: absolute;
-    left: 50%;
-    width: 40rem;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 footer ul#sponsors li:nth-child(1) { animation-name: sponsor-1; }
