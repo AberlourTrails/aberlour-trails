@@ -16,6 +16,7 @@ footer ul#sponsors li
     margin-left: -20rem;
     opacity: 0;
     padding-bottom: 2rem;
+    visibility: hidden;
     position: absolute;
     left: 50%;
     width: 40rem;
@@ -30,8 +31,8 @@ footer ul#sponsors li:nth-child(5) { animation-name: sponsor-5; }
 /* Each sponsor is visible for 1 / 5 = 20% of the total time. 0-10% of that
 time slice is fade in; 10-90% is held visible; 90-100% is fade out. */
 
-@keyframes sponsor-1 {  0% { opacity: 0; }  2%, 18% { opacity: 1; }  20% { opacity: 0; } }
-@keyframes sponsor-2 { 20% { opacity: 0; } 22%, 38% { opacity: 1; }  40% { opacity: 0; } }
-@keyframes sponsor-3 { 40% { opacity: 0; } 42%, 58% { opacity: 1; }  60% { opacity: 0; } }
-@keyframes sponsor-4 { 60% { opacity: 0; } 62%, 78% { opacity: 1; }  80% { opacity: 0; } }
-@keyframes sponsor-5 { 80% { opacity: 0; } 82%, 98% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes sponsor-1 {  0% { opacity: 0; visibility: hidden; }  2%, 18% { opacity: 1; visibility: visible; }  20% { opacity: 0; visibility: hidden; } }
+@keyframes sponsor-2 { 20% { opacity: 0; visibility: hidden; } 22%, 38% { opacity: 1; visibility: visible; }  40% { opacity: 0; visibility: hidden; } }
+@keyframes sponsor-3 { 40% { opacity: 0; visibility: hidden; } 42%, 58% { opacity: 1; visibility: visible; }  60% { opacity: 0; visibility: hidden; } }
+@keyframes sponsor-4 { 60% { opacity: 0; visibility: hidden; } 62%, 78% { opacity: 1; visibility: visible; }  80% { opacity: 0; visibility: hidden; } }
+@keyframes sponsor-5 { 80% { opacity: 0; visibility: hidden; } 82%, 98% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
