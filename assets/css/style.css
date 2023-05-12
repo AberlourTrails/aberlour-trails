@@ -231,23 +231,19 @@ body.trail main
 nav#trail,
 footer
 {
-    background-image: linear-gradient(#000000ff, #00000000);
-    color: #ffffff;
-    text-shadow:
-        0.1rem 0.1rem 0.5rem #000000,
-        0.1rem 0.1rem 0.5rem #000000;
+    font-style: italic;
+    text-align: center;
 }
 
 nav#trail p.trail-current,
-footer p
+footer p,
+footer ul#sponsors
 {
-    background-position: center center;
-    background-size: cover;
-    font-style: italic;
     margin: 0.5rem 1rem 1rem;
     padding-top: 0.5rem;
-    text-align: center;
 }
+
+/* See sponsors.css for animation. */
 
 nav#trail menu
 {
