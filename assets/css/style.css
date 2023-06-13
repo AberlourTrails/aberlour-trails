@@ -299,6 +299,11 @@ p
     margin: 0 0 1rem;
 }
 
+p.attribution
+{
+    font-style: italic;
+}
+
 @media screen and (max-width: 960px) {
     nav#top
     {
