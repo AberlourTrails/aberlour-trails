@@ -6,11 +6,18 @@ const enableAudioControls = (language) => {
         audioEl.currentTime = 0;
     });
 
-    const playButtonEl = document.querySelector('#play-button');
     const audioEl = document.querySelector(`audio[lang=${language}]`);
+    let playButtonEl = document.querySelector('#play-button');
 
-    if (playButtonEl === null || audioEl === null) {
+    if (audioEl === null) {
+        if (playButtonEl !== null) {
+            playButtonEl.remove();
+        }
         return;
+    } else if (audioEl !== null && playButtonEl === null) {
+        playButtonEl = document.createElement('button');
+        playButtonEl.id = 'play-button';
+        document.querySelector('#media-controls .control-strip').appendChild(playButtonEl);
     }
 
     const updatePlayButton = () => {
