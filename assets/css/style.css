@@ -304,6 +304,45 @@ p.attribution
     font-style: italic;
 }
 
+ul.gallery
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0 0 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+@media screen and (max-width: 1600px) { ul.gallery { grid-template-columns: repeat(2, 1fr); } }
+@media screen and (max-width: 960px) { ul.gallery { grid-template-columns: repeat(3, 1fr); } }
+@media screen and (max-width: 640px) { ul.gallery { grid-template-columns: repeat(2, 1fr); } }
+@media screen and (max-width: 400px) { ul.gallery { grid-template-columns: 1fr; } }
+
+ul.gallery li figure
+{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+ul.gallery li figure figcaption
+{
+    font-style: italic;
+}
+
+ul.gallery li figure figcaption cite,
+ul.gallery li figure figcaption em,
+ul.gallery li figure figcaption i
+{
+    font-style: normal;
+}
+
+ul.gallery li figure img
+{
+    max-width: 100%;
+}
+
 @media screen and (max-width: 960px) {
     nav#top
     {
