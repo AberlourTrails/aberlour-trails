@@ -1,0 +1,2 @@
+/ /trails/heritage 302
+/locations/* /trails/heritage/locations/:splat 302
